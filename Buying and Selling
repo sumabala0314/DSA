@@ -1,0 +1,28 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+       // ArrayList<Integer> range=new ArrayList<Integer>();
+        int min=prices[0];
+        int max=-1;
+        int r=0;
+        for(int i=1;i<prices.length;i++){
+            int v=prices[i];
+            if(min>v){
+                if((max-min)>r){
+                    r=max-min;
+                }
+                min=v;
+                max=v;
+            }
+            if(max<v){
+                max=v;
+            }
+
+        }
+        //System.out.println(max-min);
+          if((max-min)>r){
+                    r=max-min;
+                }
+        return r;
+        
+    }
+}
