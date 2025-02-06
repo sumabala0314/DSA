@@ -1,0 +1,16 @@
+class Solution {
+    public int singleNumber(int[] nums) {
+        HashSet<Integer> n=new HashSet<Integer>();
+        int sum=0;
+        for(int i=0;i<nums.length;i++){
+            if(n.contains(nums[i])){
+                sum-=nums[i];
+            }
+            else{
+                sum+=nums[i];
+                n.add(nums[i]);
+            }
+        }
+        return sum;
+    }
+}
